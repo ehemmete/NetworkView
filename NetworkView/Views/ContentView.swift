@@ -11,6 +11,7 @@ struct ContentView: View {
     @State var networkOuput: String
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
+
     @EnvironmentObject var networkMonitor: NetworkMonitor
 
     var body: some View {
@@ -30,11 +31,9 @@ struct ContentView: View {
                     .padding(.horizontal)
                     .fixedSize()
             }
-            
         } else {
             Text("No network connection")
         }
-        
     }
 }
 

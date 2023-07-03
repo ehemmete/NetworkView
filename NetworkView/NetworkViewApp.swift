@@ -10,13 +10,16 @@ import SwiftUI
 @main
 struct NetworkViewApp: App {
     @StateObject var networkMonitor = NetworkMonitor()
+    @AppStorage("hideTitleBar") var hideTitleBar = false
+
     var body: some Scene {
         WindowGroup {
             ContentView(networkOuput: NetworkFunctions.updateNetworkInfo()!)
                 .onDisappear { terminateApp() }
                 .environmentObject(networkMonitor)
-        }.defaultSize(width: 300, height: 200)
-            .windowStyle(.automatic)
+        }.defaultSize(width: 200, height: 100)
+            .defaultPosition(.bottomLeading)
+            .windowResizability(.contentSize)
         Settings {
             SettingsView()
                 .frame(width: 200, height: 80)
