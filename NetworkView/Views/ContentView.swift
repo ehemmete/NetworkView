@@ -16,16 +16,18 @@ struct ContentView: View {
     var body: some View {
         if networkMonitor.isConnected {
             if useMonospaced {
-                Text(networkOuput)
+                Text(networkMonitor.networkOutput)
                     .textSelection(.enabled)
                     .font(.system(size: CGFloat(fontSize)).monospaced())
-                    .padding()
+                    .padding(.top)
+                    .padding(.horizontal)
                     .fixedSize()
             } else {
-                Text(networkOuput)
+                Text(networkMonitor.networkOutput)
                     .textSelection(.enabled)
                     .font(.system(size: CGFloat(fontSize)))
-                    .padding()
+                    .padding(.top)
+                    .padding(.horizontal)
                     .fixedSize()
             }
             
