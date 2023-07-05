@@ -10,24 +10,22 @@ import SwiftUI
 @main
 struct NetworkViewApp: App {
     @StateObject var networkMonitor = NetworkMonitor()
-    @AppStorage("hideTitleBar") var hideTitleBar = false
-
     var body: some Scene {
         WindowGroup {
             ContentView(networkOuput: NetworkFunctions.updateNetworkInfo()!)
                 .onDisappear { terminateApp() }
                 .environmentObject(networkMonitor)
-        }.defaultSize(width: 200, height: 100)
-            .defaultPosition(.bottomLeading)
-            .windowResizability(.contentSize)
+        }
+        .defaultPosition(.bottomLeading)
+        .windowResizability(.contentSize)
+        .windowStyle(.hiddenTitleBar)
         Settings {
             SettingsView()
-                .frame(width: 200, height: 80)
                 .navigationTitle("Settings")
         }
         .windowResizability(.contentSize)
     }
     private func terminateApp() {
-                NSApplication.shared.terminate(self)
-            }
+        NSApplication.shared.terminate(self)
+    }
 }

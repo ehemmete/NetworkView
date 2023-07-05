@@ -7,30 +7,47 @@
 
 import SwiftUI
 
+struct VisualEffectView: NSViewRepresentable {
+    func makeNSView(context: Context) -> NSVisualEffectView {
+        let view = NSVisualEffectView()
+        view.blendingMode = .behindWindow
+        view.state = .active
+        view.material = .underWindowBackground
+        return view
+    }
+    func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
+        //
+    }
+}
+
 struct ContentView: View {
     @State var networkOuput: String
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
-
+    @AppStorage("beTranslucent") var beTranslucent = false
     @EnvironmentObject var networkMonitor: NetworkMonitor
-
+    
     var body: some View {
         if networkMonitor.isConnected {
-            if useMonospaced {
-                Text(networkMonitor.networkOutput)
-                    .textSelection(.enabled)
-                    .font(.system(size: CGFloat(fontSize)).monospaced())
-                    .padding(.top)
-                    .padding(.horizontal)
-                    .fixedSize()
-            } else {
-                Text(networkMonitor.networkOutput)
-                    .textSelection(.enabled)
-                    .font(.system(size: CGFloat(fontSize)))
-                    .padding(.top)
-                    .padding(.horizontal)
-                    .fixedSize()
-            }
+            ZStack(alignment: .top) {
+                Text("NetworkView")
+                    .padding(.top, 6)
+                    .ignoresSafeArea()
+                    .bold()
+                if useMonospaced {
+                    Text(networkMonitor.networkOutput)
+                        .textSelection(.enabled)
+                        .font(.system(size: CGFloat(fontSize)).monospaced())
+                        .padding(.horizontal)
+                        .fixedSize()
+                } else {
+                    Text(networkMonitor.networkOutput)
+                        .textSelection(.enabled)
+                        .font(.system(size: CGFloat(fontSize)))
+                        .padding(.horizontal)
+                        .fixedSize()
+                }
+            }.background(beTranslucent ? VisualEffectView().ignoresSafeArea() : nil)
         } else {
             Text("No network connection")
         }

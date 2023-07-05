@@ -10,12 +10,13 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
+    @AppStorage("beTranslucent") var beTranslucent = false
     @FocusState var isFocused: Bool
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .listRowSeparatorLeading) {
             HStack {
-                Text("Select font size:")
+                Text("Select font size:    ").fixedSize()
                 TextField("", value: $fontSize, format: .number)
                     .frame(minWidth: 15, maxWidth: 25)
                     .focused($isFocused)
@@ -28,10 +29,14 @@ struct SettingsView: View {
                 }
             }
             HStack {
-                Text("Use monospaced font:")
+                Text("Use monospaced font:    ").fixedSize()
                 Toggle("", isOn: $useMonospaced)
             }
-        }        
+            HStack {
+                Text("Use translucent window: ").fixedSize()
+                Toggle("", isOn: $beTranslucent)
+            }
+        }.padding()
     }
 }
 
