@@ -42,7 +42,7 @@ struct NetworkFunctions {
     
     static func updateNetworkInfo() -> String? {
         var output: [String] = []
-        print("Updating network info")
+//        print("Updating network info")
         if let serviceList = try! NetworkFunctions.getNetworkServices() {
 //            print(serviceList)
             for service in serviceList {

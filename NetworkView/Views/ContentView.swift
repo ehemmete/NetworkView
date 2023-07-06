@@ -21,19 +21,19 @@ struct VisualEffectView: NSViewRepresentable {
 }
 
 struct ContentView: View {
-    @State var networkOuput: String
+    @State var networkOutput: String
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
     @AppStorage("beTranslucent") var beTranslucent = false
     @EnvironmentObject var networkMonitor: NetworkMonitor
     
     var body: some View {
-        if networkMonitor.isConnected {
-            ZStack(alignment: .top) {
+        ZStack(alignment: .top) {
                 Text("NetworkView")
                     .padding(.top, 6)
                     .ignoresSafeArea()
                     .bold()
+            if networkMonitor.isConnected {
                 if useMonospaced {
                     Text(networkMonitor.networkOutput)
                         .textSelection(.enabled)
@@ -47,16 +47,30 @@ struct ContentView: View {
                         .padding(.horizontal)
                         .fixedSize()
                 }
-            }.background(beTranslucent ? VisualEffectView().ignoresSafeArea() : nil)
-        } else {
-            Text("No network connection")
-        }
+            } else {
+                if useMonospaced {
+                    Text("No network connection")
+                        .frame(minWidth: 200)
+                        .textSelection(.enabled)
+                        .font(.system(size: CGFloat(fontSize)).monospaced())
+                        .padding(.horizontal)
+                        .fixedSize()
+                } else {
+                    Text("No network connection")
+                        .frame(minWidth: 200)
+                        .textSelection(.enabled)
+                        .font(.system(size: CGFloat(fontSize)))
+                        .padding(.horizontal)
+                        .fixedSize()
+                }
+            }
+        }.background(beTranslucent ? VisualEffectView().ignoresSafeArea() : nil)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(networkOuput: """
+        ContentView(networkOutput: """
 Thunderbolt Ethernet: 172.21.21.21
 Wi-Fi: 10.0.0.1
 SSID / 157@5GHz-40MHz wide

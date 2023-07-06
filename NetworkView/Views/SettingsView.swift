@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
+    @State var networkOutput: String
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
     @AppStorage("beTranslucent") var beTranslucent = false
@@ -36,10 +37,14 @@ struct SettingsView: View {
                 Text("Use translucent window: ").fixedSize()
                 Toggle("", isOn: $beTranslucent)
             }
-        }.padding()
+        }.padding(.horizontal)
+            .padding(.top)
+        Button("Force Refresh", action: {
+            networkOutput = NetworkFunctions.updateNetworkInfo() ?? ""
+        }).padding()
     }
 }
 
 #Preview {
-    SettingsView()
+    SettingsView(networkOutput: "")
 }

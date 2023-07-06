@@ -12,7 +12,7 @@ struct NetworkViewApp: App {
     @StateObject var networkMonitor = NetworkMonitor()
     var body: some Scene {
         WindowGroup {
-            ContentView(networkOuput: NetworkFunctions.updateNetworkInfo()!)
+            ContentView(networkOutput: NetworkFunctions.updateNetworkInfo()!)
                 .onDisappear { terminateApp() }
                 .environmentObject(networkMonitor)
         }
@@ -20,7 +20,7 @@ struct NetworkViewApp: App {
         .windowResizability(.contentSize)
         .windowStyle(.hiddenTitleBar)
         Settings {
-            SettingsView()
+            SettingsView(networkOutput: "")
                 .navigationTitle("Settings")
         }
         .windowResizability(.contentSize)
