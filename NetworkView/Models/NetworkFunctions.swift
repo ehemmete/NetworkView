@@ -10,6 +10,9 @@ import Foundation
 import CoreWLAN
 import SystemConfiguration
 
+
+
+
 extension CWChannelBand: CustomStringConvertible {
     public var description: String {
         switch self {
@@ -37,6 +40,8 @@ extension CWChannelWidth: CustomStringConvertible {
         }
     }
 }
+
+
 
 struct NetworkFunctions {
     
@@ -74,22 +79,7 @@ struct NetworkFunctions {
         let service_order = service_list_cf as! Array<String>
         return service_order
     }
-    
-//    static func getWifiInfo() throws -> String? {
-//        let client = CWWiFiClient.shared()
-//        if let ssid_name = client.interface()!.ssid(),
-//           let channel_number = client.interface()?.wlanChannel()?.channelNumber,
-//           let channel_width = client.interface()?.wlanChannel()?.channelWidth,
-//           let channel_band = client.interface()?.wlanChannel()?.channelBand
-//        {
-//            return String("\(ssid_name) / \(channel_number)@\(channel_band)-\(channel_width) wide")
-//        }
-//        else
-//        {
-//            return String("Unable to get Wi-Fi information")
-//        }
-//    }
-    
+
     static func getWifiInfo() throws -> String? {
         let client = CWWiFiClient.shared()
         let ssid_name = client.interface()?.ssid() ?? "Unavailable"
@@ -130,26 +120,6 @@ struct NetworkFunctions {
     
     static func getExternalIP() throws -> String {
         do {
-            //            var publicIP = ""
-            //            let url = URL(string: "https://icanhazip.com")!
-            //            let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            //                guard error == nil else {
-            //                    print(error!)
-            //                    return
-            //                }
-            //                guard let data = data else {
-            //                    print("data is nil")
-            //                    return
-            //                }
-            //                guard let publicIP = String(data: data, encoding: .utf8) else {
-            //                    print("the response is not in UTF-8")
-            //                    return
-            //                }
-            //                //                        print(text)
-            //                //Use `text` inside this closure, you can call other methods or closures
-            //                //...
-            //            }
-            //            task.resume()
             let publicIP = try String(contentsOf: URL(string: "https://icanhazip.com/")!)
             return String("External: \(publicIP)")
         } catch {

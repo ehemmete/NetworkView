@@ -9,7 +9,6 @@ import Foundation
 import Network
 
 class NetworkMonitor: ObservableObject {
-    @Published var networkOutput = ""
     private let networkMonitor = NWPathMonitor()
     private let workerQueue = DispatchQueue(label: "Monitor")
     var isConnected = false
@@ -18,7 +17,7 @@ class NetworkMonitor: ObservableObject {
         networkMonitor.pathUpdateHandler = { path in
             self.isConnected = path.status == .satisfied
             RunLoop.main.perform {
-                self.networkOutput = NetworkFunctions.updateNetworkInfo() ?? ""
+                networkOutput.updateOutput(newOutput: NetworkFunctions.updateNetworkInfo() ?? "")
             }
         }
         networkMonitor.start(queue: workerQueue)

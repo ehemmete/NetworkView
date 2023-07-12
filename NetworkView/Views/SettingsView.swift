@@ -37,11 +37,31 @@ struct SettingsView: View {
                 Text("Use translucent window: ").fixedSize()
                 Toggle("", isOn: $beTranslucent)
             }
-        }.padding(.horizontal)
-            .padding(.top)
-        Button("Force Refresh", action: {
-            networkOutput = NetworkFunctions.updateNetworkInfo() ?? ""
-        }).padding()
+        }
+        .padding()
+        HStack {
+            Text("""
+                 If SSID is always \"Unavailable\",
+                 enable location services
+                 for NetworkView
+                 """)
+                .font(.caption)
+                .fixedSize()
+            Button {
+                NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_LocationServices")!)
+                
+            } label: {
+                Image(systemName: "location.circle.fill")
+            }.buttonStyle(PlainButtonStyle())
+
+        }
+        .padding(.horizontal)
+        .padding(.bottom)
+            
+        
+//        Button("Force Refresh", action: {
+//            networkOutput = NetworkFunctions.updateNetworkInfo() ?? ""
+//        }).padding()
     }
 }
 

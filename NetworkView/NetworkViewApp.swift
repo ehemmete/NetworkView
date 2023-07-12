@@ -12,9 +12,10 @@ struct NetworkViewApp: App {
     @StateObject var networkMonitor = NetworkMonitor()
     var body: some Scene {
         WindowGroup {
-            ContentView(networkOutput: NetworkFunctions.updateNetworkInfo()!)
+            ContentView()
                 .onDisappear { terminateApp() }
                 .environmentObject(networkMonitor)
+                .environmentObject(networkOutput)
         }
         .defaultPosition(.bottomLeading)
         .windowResizability(.contentSize)
