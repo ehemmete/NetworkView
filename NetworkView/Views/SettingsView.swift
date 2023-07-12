@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @State var networkOutput: String
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
     @AppStorage("beTranslucent") var beTranslucent = false
@@ -37,6 +36,7 @@ struct SettingsView: View {
                 Text("Use translucent window: ").fixedSize()
                 Toggle("", isOn: $beTranslucent)
             }
+            
         }
         .padding()
         HStack {
@@ -49,22 +49,15 @@ struct SettingsView: View {
                 .fixedSize()
             Button {
                 NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_LocationServices")!)
-                
             } label: {
                 Image(systemName: "location.circle.fill")
             }.buttonStyle(PlainButtonStyle())
-
         }
         .padding(.horizontal)
         .padding(.bottom)
-            
-        
-//        Button("Force Refresh", action: {
-//            networkOutput = NetworkFunctions.updateNetworkInfo() ?? ""
-//        }).padding()
     }
 }
 
 #Preview {
-    SettingsView(networkOutput: "")
+    SettingsView()
 }

@@ -23,19 +23,16 @@ struct VisualEffectView: NSViewRepresentable {
 
 struct ContentView: View, CustomUserLocationDelegate {
     func userLocationUpdated(location: CLLocation) {
-        print("Location Updated")
+//        print("Location Updated")
     }
-
-//    @State var networkOutput: String
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
     @AppStorage("beTranslucent") var beTranslucent = false
     @EnvironmentObject var networkMonitor: NetworkMonitor
-//    @EnvironmentObject var locationController: LocationServices
     @EnvironmentObject var networkOutput: NetworkOutput
     
     var body: some View {
-        let _ = Self._printChanges()
+//        let _ = Self._printChanges()
         ZStack(alignment: .top) {
                 Text("NetworkView")
                     .padding(.top, 6)
@@ -87,12 +84,6 @@ struct ContentView: View, CustomUserLocationDelegate {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-//        ContentView(networkOutput: """
-//Thunderbolt Ethernet: 172.21.21.21
-//Wi-Fi: 10.0.0.1
-//SSID / 157@5GHz-40MHz wide
-//External: 100.100.100.100
-//""").environmentObject(NetworkMonitor())
         ContentView()
     }
 }

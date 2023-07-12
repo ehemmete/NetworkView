@@ -22,11 +22,11 @@ class LocationServices: NSObject, CLLocationManagerDelegate, ObservableObject {
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print("location changed")
+        print("Location Changed")
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        print("authorization changed")
+        print("Authorization Changed")
         networkOutput.updateOutput(newOutput: NetworkFunctions.updateNetworkInfo() ?? "")
     }
 }

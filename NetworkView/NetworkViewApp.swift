@@ -21,7 +21,7 @@ struct NetworkViewApp: App {
         .windowResizability(.contentSize)
         .windowStyle(.hiddenTitleBar)
         Settings {
-            SettingsView(networkOutput: "")
+            SettingsView()
                 .navigationTitle("Settings")
         }
         .windowResizability(.contentSize)

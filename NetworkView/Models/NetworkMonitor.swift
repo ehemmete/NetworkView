@@ -17,6 +17,7 @@ class NetworkMonitor: ObservableObject {
         networkMonitor.pathUpdateHandler = { path in
             self.isConnected = path.status == .satisfied
             RunLoop.main.perform {
+                print("Network Changed")
                 networkOutput.updateOutput(newOutput: NetworkFunctions.updateNetworkInfo() ?? "")
             }
         }

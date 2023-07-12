@@ -56,7 +56,7 @@ struct NetworkFunctions {
 //                    print("\(service_name):\(ip_address)")
                     output.append(String("\(service_name): \(ip_address)"))
                     if service_name == "Wi-Fi" {
-//                        print("service name matches")
+//                        print("service name is Wi-Fi")
                         if let wifiInfo = try! NetworkFunctions.getWifiInfo() {
 //                            print(wifiInfo)
                             output.append(wifiInfo)
