@@ -11,6 +11,7 @@ struct SettingsView: View {
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
     @AppStorage("beTranslucent") var beTranslucent = false
+    @AppStorage("checkVPN") var checkVPN = true
     @FocusState var isFocused: Bool
     
     var body: some View {
@@ -35,6 +36,12 @@ struct SettingsView: View {
             HStack {
                 Text("Use translucent window: ").fixedSize()
                 Toggle("", isOn: $beTranslucent)
+            }
+            HStack {
+                Text("Display VPN addresses:  ").fixedSize()
+                Toggle("", isOn: $checkVPN).onChange(of: checkVPN, perform: { value in
+                    networkOutput.updateOutput(newOutput: NetworkFunctions.updateNetworkInfo() ?? "")
+                })
             }
             
         }

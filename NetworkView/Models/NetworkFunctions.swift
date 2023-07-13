@@ -9,9 +9,7 @@
 import Foundation
 import CoreWLAN
 import SystemConfiguration
-
-
-
+import SwiftUI
 
 extension CWChannelBand: CustomStringConvertible {
     public var description: String {
@@ -40,17 +38,22 @@ extension CWChannelWidth: CustomStringConvertible {
         }
     }
 }
-
-
+//let defaults = UserDefaults.standard
+//let checkVPN = defaults.bool(forKey: "checkVPN")
 
 struct NetworkFunctions {
+    private static let vpnProtocolsKeysIdentifiers = [
+        "tap", "tun", "ppp", "ipsec", "utun"
+    ]
     
     static func updateNetworkInfo() -> String? {
+        @AppStorage("checkVPN") var checkVPN = true
         var output: [String] = []
 //        print("Updating network info")
         if let serviceList = try! NetworkFunctions.getNetworkServices() {
 //            print(serviceList)
             for service in serviceList {
+//                print(service)
                 if let service_name = try! NetworkFunctions.getServiceName(service as CFString),
                    let ip_address = try! NetworkFunctions.getIP(service as CFString) {
 //                    print("\(service_name):\(ip_address)")
@@ -63,6 +66,11 @@ struct NetworkFunctions {
                         }
                     }
                 }
+            }
+        }
+        if checkVPN {
+            if let vpnDetails = try! getVPNDetails() {
+                output.append(vpnDetails)
             }
         }
         let publicIP = try! NetworkFunctions.getExternalIP()
@@ -126,4 +134,28 @@ struct NetworkFunctions {
             return String("No external connection")
         }
     }
+    
+    
+    static func getVPNDetails() throws -> String? {
+        var vpnOutput: [String] = []
+        guard let cfDict = CFNetworkCopySystemProxySettings() else { return nil }
+        let nsDict = cfDict.takeRetainedValue() as NSDictionary
+        guard let keys = nsDict["__SCOPED__"] as? NSDictionary,
+              let allKeys = keys.allKeys as? [String] else { return nil }
+        
+        // Checking for tunneling protocols in the keys
+        for key in allKeys {
+            for protocolId in vpnProtocolsKeysIdentifiers
+            where key.starts(with: protocolId) {
+                let net_config = SCDynamicStoreCreate(nil, "net" as CFString, nil, nil)
+                let ipInfo = SCDynamicStoreCopyValue(net_config, String("State:/Network/Interface/\(key)/IPv4") as CFString)
+                let address = ipInfo![kSCPropNetIPv4Addresses] as! [String]
+                vpnOutput.append("\(key): \(address[0])")
+                
+            }
+        }
+        return vpnOutput.joined(separator: "\n")
+        
+    }
+    
 }
