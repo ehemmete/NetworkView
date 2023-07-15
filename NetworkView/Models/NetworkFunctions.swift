@@ -38,8 +38,6 @@ extension CWChannelWidth: CustomStringConvertible {
         }
     }
 }
-//let defaults = UserDefaults.standard
-//let checkVPN = defaults.bool(forKey: "checkVPN")
 
 struct NetworkFunctions {
     private static let vpnProtocolsKeysIdentifiers = [
@@ -154,8 +152,11 @@ struct NetworkFunctions {
                 
             }
         }
-        return vpnOutput.joined(separator: "\n")
-        
+        if vpnOutput.isEmpty {
+            return nil
+        } else {
+            return vpnOutput.joined(separator: "\n")
+        }
     }
     
 }

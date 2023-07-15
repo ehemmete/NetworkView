@@ -17,7 +17,8 @@ struct SettingsView: View {
     var body: some View {
         VStack(alignment: .listRowSeparatorLeading) {
             HStack {
-                Text("Select font size:    ").fixedSize()
+                Text("Select font size:").fixedSize()
+                Spacer()
                 TextField("", value: $fontSize, format: .number)
                     .frame(minWidth: 15, maxWidth: 25)
                     .focused($isFocused)
@@ -28,21 +29,24 @@ struct SettingsView: View {
                     isFocused = false
                     fontSize -= 1
                 }
-            }
+            }.frame(width: 195)
             HStack {
-                Text("Use monospaced font:    ").fixedSize()
+                Text("Use monospaced font:").fixedSize()
+                Spacer()
                 Toggle("", isOn: $useMonospaced)
-            }
+            }.frame(width: 200)
             HStack {
-                Text("Use translucent window: ").fixedSize()
+                Text("Use translucent window:").fixedSize()
+                Spacer()
                 Toggle("", isOn: $beTranslucent)
-            }
+            }.frame(width: 200)
             HStack {
-                Text("Display VPN addresses:  ").fixedSize()
+                Text("Display VPN addresses:").fixedSize()
+                Spacer()
                 Toggle("", isOn: $checkVPN).onChange(of: checkVPN, perform: { value in
                     networkOutput.updateOutput(newOutput: NetworkFunctions.updateNetworkInfo() ?? "")
                 })
-            }
+            }.frame(width: 200)
             
         }
         .padding()
