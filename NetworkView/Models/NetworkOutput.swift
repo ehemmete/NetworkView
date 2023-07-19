@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Network
 
 var networkOutput = NetworkOutput(displayOutput: "Loading")
 
@@ -20,5 +21,3 @@ class NetworkOutput: ObservableObject {
         self.displayOutput = newOutput
     }
 }
-
-

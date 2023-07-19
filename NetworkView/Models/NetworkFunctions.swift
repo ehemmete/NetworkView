@@ -147,9 +147,9 @@ struct NetworkFunctions {
             where key.starts(with: protocolId) {
                 let net_config = SCDynamicStoreCreate(nil, "net" as CFString, nil, nil)
                 let ipInfo = SCDynamicStoreCopyValue(net_config, String("State:/Network/Interface/\(key)/IPv4") as CFString)
-                let address = ipInfo![kSCPropNetIPv4Addresses] as! [String]
-                vpnOutput.append("\(key): \(address[0])")
-                
+                if let address = ipInfo![kSCPropNetIPv4Addresses] as? [String] {
+                    vpnOutput.append("\(key): \(address[0])")
+                }
             }
         }
         if vpnOutput.isEmpty {

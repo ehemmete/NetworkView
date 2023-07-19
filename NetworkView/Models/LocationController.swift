@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreLocation
+import Network
 
 protocol CustomUserLocationDelegate {
     func userLocationUpdated(location: CLLocation)
@@ -27,6 +28,12 @@ class LocationServices: NSObject, CLLocationManagerDelegate, ObservableObject {
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         print("Authorization Changed")
-        networkOutput.updateOutput(newOutput: NetworkFunctions.updateNetworkInfo() ?? "")
+        let queue = DispatchQueue(label: "network.monitor")
+        let monitor = NWPathMonitor()
+        monitor.pathUpdateHandler = { path in
+            networkOutput.updateOutput(newOutput: NetworkWorkflow.updateNetworkInfo(path: path) ?? "")
+        }
+        monitor.start(queue: queue)
+//
     }
 }
