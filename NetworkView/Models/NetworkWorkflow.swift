@@ -11,6 +11,34 @@ import SystemConfiguration
 import Network
 import SwiftUI
 
+extension CWChannelBand: CustomStringConvertible {
+    public var description: String {
+        switch self {
+        case .band2GHz: return "2.4GHz"
+        case .band5GHz: return "5GHz"
+        case .band6GHz: return "6GHz"
+        default: return "Unknown"
+        }
+    }
+}
+
+extension CWChannelWidth: CustomStringConvertible {
+    public var description: String {
+        switch  self {
+        case .width160MHz:
+            return "160MHz"
+        case .width20MHz:
+            return "20MHz"
+        case .width40MHz:
+            return "40MHz"
+        case .width80MHz:
+            return "80MHz"
+        default:
+            return "Unknown"
+        }
+    }
+}
+
 struct NetworkWorkflow {
     
     struct ServiceData {
@@ -58,7 +86,7 @@ struct NetworkWorkflow {
                 }
             }
         }
-        let publicIP = try! NetworkFunctions.getExternalIP()
+        let publicIP = try! NetworkWorkflow.getExternalIP()
         output.append(publicIP)
         if output.isEmpty {
             return nil

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Network
 
 struct SettingsView: View {
     @AppStorage("fontSize") var fontSize = 12
@@ -44,7 +45,12 @@ struct SettingsView: View {
                 Text("Display VPN addresses:").fixedSize()
                 Spacer()
                 Toggle("", isOn: $checkVPN).onChange(of: checkVPN, perform: { value in
-                    networkOutput.updateOutput(newOutput: NetworkFunctions.updateNetworkInfo() ?? "")
+                    let queue = DispatchQueue(label: "network.monitor")
+                    let monitor = NWPathMonitor()
+                    monitor.pathUpdateHandler = { path in
+                        networkOutput.updateOutput(newOutput: NetworkWorkflow.updateNetworkInfo(path: path) ?? "")
+                    }
+                    monitor.start(queue: queue)
                 })
             }.frame(width: 200)
             

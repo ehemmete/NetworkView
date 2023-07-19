@@ -11,7 +11,6 @@
 		071693D62A3A5F7E002C4337 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693D52A3A5F7E002C4337 /* ContentView.swift */; };
 		071693D82A3A5F7E002C4337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071693D72A3A5F7E002C4337 /* Assets.xcassets */; };
 		071693DB2A3A5F7E002C4337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071693DA2A3A5F7E002C4337 /* Preview Assets.xcassets */; };
-		071693E42A3A5F99002C4337 /* NetworkFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693E22A3A5F98002C4337 /* NetworkFunctions.swift */; };
 		071693E52A3A5F99002C4337 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693E32A3A5F99002C4337 /* NetworkMonitor.swift */; };
 		071693E82A3A5FFF002C4337 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693E72A3A5FFF002C4337 /* SettingsView.swift */; };
 		075D67DA2A5F016F00E1591E /* NetworkOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D67D92A5F016F00E1591E /* NetworkOutput.swift */; };
@@ -26,7 +25,6 @@
 		071693D72A3A5F7E002C4337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		071693DA2A3A5F7E002C4337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		071693DC2A3A5F7E002C4337 /* NetworkView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkView.entitlements; sourceTree = "<group>"; };
-		071693E22A3A5F98002C4337 /* NetworkFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkFunctions.swift; sourceTree = "<group>"; };
 		071693E32A3A5F99002C4337 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		071693E72A3A5FFF002C4337 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		072D24DE2A5CB435008B1508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 			isa = PBXGroup;
 			children = (
 				075D67D92A5F016F00E1591E /* NetworkOutput.swift */,
-				071693E22A3A5F98002C4337 /* NetworkFunctions.swift */,
 				07E6D31E2A67016D0003EB10 /* NetworkWorkflow.swift */,
 				07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */,
 				071693E32A3A5F99002C4337 /* NetworkMonitor.swift */,
@@ -179,7 +176,6 @@
 				071693D62A3A5F7E002C4337 /* ContentView.swift in Sources */,
 				071693E52A3A5F99002C4337 /* NetworkMonitor.swift in Sources */,
 				075D67DA2A5F016F00E1591E /* NetworkOutput.swift in Sources */,
-				071693E42A3A5F99002C4337 /* NetworkFunctions.swift in Sources */,
 				07E6D31F2A67016D0003EB10 /* NetworkWorkflow.swift in Sources */,
 				07B6EE4D2A5DA52E00DFEBF9 /* LocationController.swift in Sources */,
 				071693D42A3A5F7E002C4337 /* NetworkViewApp.swift in Sources */,
@@ -329,7 +325,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sneakypockets.NetworkView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -359,7 +355,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.3;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sneakypockets.NetworkView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

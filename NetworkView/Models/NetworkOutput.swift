@@ -7,6 +7,7 @@
 
 import Foundation
 import Network
+import CoreWLAN
 
 var networkOutput = NetworkOutput(displayOutput: "Loading")
 
