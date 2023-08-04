@@ -12,8 +12,9 @@ struct SettingsView: View {
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
     @AppStorage("beTranslucent") var beTranslucent = false
-    @AppStorage("checkVPN") var checkVPN = true
+//    @AppStorage("checkVPN") var checkVPN = true
     @FocusState var isFocused: Bool
+    @State var presentSettingsAlert = false
     
     var body: some View {
         VStack(alignment: .listRowSeparatorLeading) {
@@ -41,18 +42,16 @@ struct SettingsView: View {
                 Spacer()
                 Toggle("", isOn: $beTranslucent)
             }.frame(width: 200)
-            HStack {
-                Text("Display VPN addresses:").fixedSize()
-                Spacer()
-                Toggle("", isOn: $checkVPN).onChange(of: checkVPN, perform: { value in
-                    let queue = DispatchQueue(label: "network.monitor")
-                    let monitor = NWPathMonitor()
-                    monitor.pathUpdateHandler = { path in
-                        networkOutput.updateOutput(newOutput: NetworkWorkflow.updateNetworkInfo(path: path) ?? "")
-                    }
-                    monitor.start(queue: queue)
-                })
-            }.frame(width: 200)
+//            HStack {
+//                Text("Display VPN addresses:").fixedSize()
+//                Spacer()
+//                Toggle("", isOn: $checkVPN).onChange(of: checkVPN, perform: { value in
+//                    print("need to restart the app to show change")
+//                    presentSettingsAlert = true
+//                }).alert("Please restart NetworkView to update the display", isPresented: $presentSettingsAlert) {
+//                    Button("OK") {}
+//                }
+//            }.frame(width: 200)
             
         }
         .padding()

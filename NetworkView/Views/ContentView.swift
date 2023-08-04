@@ -23,21 +23,22 @@ struct VisualEffectView: NSViewRepresentable {
 
 struct ContentView: View, CustomUserLocationDelegate {
     func userLocationUpdated(location: CLLocation) {
-//        print("Location Updated")
+        //        print("Location Updated")
     }
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
     @AppStorage("beTranslucent") var beTranslucent = false
     @EnvironmentObject var networkMonitor: NetworkMonitor
     @EnvironmentObject var networkOutput: NetworkOutput
+    @State var presentMainAlert = false
     
     var body: some View {
-//        let _ = Self._printChanges()
+        //        let _ = Self._printChanges()
         ZStack(alignment: .top) {
-                Text("NetworkView")
-                    .padding(.top, 6)
-                    .ignoresSafeArea()
-                    .bold()
+            Text("NetworkView")
+                .padding(.top, 6)
+                .ignoresSafeArea()
+                .bold()
             if networkMonitor.isConnected {
                 if useMonospaced {
                     Text(networkOutput.displayOutput)
@@ -70,6 +71,9 @@ struct ContentView: View, CustomUserLocationDelegate {
                 }
             }
         }
+        .alert("Please restart NetworkView to apply the change.", isPresented: $presentMainAlert) {
+            Button("OK") {}
+        }
         .background(beTranslucent ? VisualEffectView().ignoresSafeArea() : nil)
         .onAppear(perform: {
             if LocationServices.shared.locationManager.authorizationStatus == .authorizedAlways {
@@ -78,7 +82,6 @@ struct ContentView: View, CustomUserLocationDelegate {
                 LocationServices.shared.locationManager.requestAlwaysAuthorization()
             }
         })
-            
     }
 }
 

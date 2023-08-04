@@ -51,8 +51,10 @@ struct NetworkWorkflow {
         }
     }
 
+    
     static func updateNetworkInfo(path: NWPath) -> String? {
-        @AppStorage("checkVPN") var checkVPN = true
+        
+//        @AppStorage("checkVPN") var checkVPN = true
         var output: [String] = []
         var serviceData: [ServiceData] = []
         
@@ -64,6 +66,7 @@ struct NetworkWorkflow {
                     serviceData.append(newService)
                 }
             }
+            
             for activeInterface in path.availableInterfaces {
                 var serviceName = ""
                 if let net_config = SCDynamicStoreCreate(nil, "net" as CFString, nil, nil),
