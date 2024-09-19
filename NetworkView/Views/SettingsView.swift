@@ -42,17 +42,6 @@ struct SettingsView: View {
                 Spacer()
                 Toggle("", isOn: $beTranslucent)
             }.frame(width: 200)
-//            HStack {
-//                Text("Display VPN addresses:").fixedSize()
-//                Spacer()
-//                Toggle("", isOn: $checkVPN).onChange(of: checkVPN, perform: { value in
-//                    print("need to restart the app to show change")
-//                    presentSettingsAlert = true
-//                }).alert("Please restart NetworkView to update the display", isPresented: $presentSettingsAlert) {
-//                    Button("OK") {}
-//                }
-//            }.frame(width: 200)
-            
         }
         .padding()
         HStack {

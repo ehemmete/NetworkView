@@ -11,7 +11,7 @@ import SystemConfiguration
 import Network
 import SwiftUI
 
-extension CWChannelBand: CustomStringConvertible {
+extension CWChannelBand: @retroactive CustomStringConvertible {
     public var description: String {
         switch self {
         case .band2GHz: return "2.4GHz"
@@ -22,7 +22,7 @@ extension CWChannelBand: CustomStringConvertible {
     }
 }
 
-extension CWChannelWidth: CustomStringConvertible {
+extension CWChannelWidth: @retroactive CustomStringConvertible {
     public var description: String {
         switch  self {
         case .width160MHz:
@@ -39,7 +39,7 @@ extension CWChannelWidth: CustomStringConvertible {
     }
 }
 
-struct NetworkWorkflow {
+enum NetworkWorkflow {
     
     struct ServiceData {
         var serviceName: String = ""
@@ -50,11 +50,8 @@ struct NetworkWorkflow {
             self.serviceIP = serviceIP
         }
     }
-
     
-    static func updateNetworkInfo(path: NWPath) -> String? {
-        
-//        @AppStorage("checkVPN") var checkVPN = true
+    static func updateNetworkInfo(path: NWPath) throws -> String? {
         var output: [String] = []
         var serviceData: [ServiceData] = []
         
@@ -89,8 +86,7 @@ struct NetworkWorkflow {
                 }
             }
         }
-        let publicIP = try! NetworkWorkflow.getExternalIP()
-        output.append(publicIP)
+        
         if output.isEmpty {
             return nil
         } else {
@@ -140,12 +136,16 @@ struct NetworkWorkflow {
             return String("Unable to get Wi-Fi information")
         }
     }
-    static func getExternalIP() throws -> String {
+
+    static func getExternalIP() async throws -> String {
+        let url = URL(string: "https://icanhazip.com/")
         do {
-            let publicIP = try String(contentsOf: URL(string: "https://icanhazip.com/")!)
-            return String("External: \(publicIP)")
+            let sessionConfig = URLSessionConfiguration.default
+            sessionConfig.timeoutIntervalForResource = 2
+            let (data, _) = try await URLSession(configuration: sessionConfig).data(from: url!)
+            return "External: \(String(decoding: data, as: UTF8.self))"
         } catch {
-            return String("No external connection")
+            return "External: No Connection"
         }
     }
 }

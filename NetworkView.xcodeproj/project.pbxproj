@@ -14,6 +14,7 @@
 		071693E52A3A5F99002C4337 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693E32A3A5F99002C4337 /* NetworkMonitor.swift */; };
 		071693E82A3A5FFF002C4337 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693E72A3A5FFF002C4337 /* SettingsView.swift */; };
 		075D67DA2A5F016F00E1591E /* NetworkOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D67D92A5F016F00E1591E /* NetworkOutput.swift */; };
+		07A7CF582C9B8E92009777E0 /* ExternalIPOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7CF572C9B8E88009777E0 /* ExternalIPOutput.swift */; };
 		07B6EE4D2A5DA52E00DFEBF9 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */; };
 		07E6D31F2A67016D0003EB10 /* NetworkWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6D31E2A67016D0003EB10 /* NetworkWorkflow.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		071693E72A3A5FFF002C4337 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		072D24DE2A5CB435008B1508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		075D67D92A5F016F00E1591E /* NetworkOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOutput.swift; sourceTree = "<group>"; };
+		07A7CF572C9B8E88009777E0 /* ExternalIPOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalIPOutput.swift; sourceTree = "<group>"; };
 		07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		07E6D31E2A67016D0003EB10 /* NetworkWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorkflow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				075D67D92A5F016F00E1591E /* NetworkOutput.swift */,
+				07A7CF572C9B8E88009777E0 /* ExternalIPOutput.swift */,
 				07E6D31E2A67016D0003EB10 /* NetworkWorkflow.swift */,
 				07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */,
 				071693E32A3A5F99002C4337 /* NetworkMonitor.swift */,
@@ -96,8 +99,8 @@
 		071693E92A3A602E002C4337 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				071693E72A3A5FFF002C4337 /* SettingsView.swift */,
 				071693D52A3A5F7E002C4337 /* ContentView.swift */,
+				071693E72A3A5FFF002C4337 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -130,7 +133,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1600;
 				TargetAttributes = {
 					071693CF2A3A5F7E002C4337 = {
 						CreatedOnToolsVersion = 15.0;
@@ -178,6 +181,7 @@
 				075D67DA2A5F016F00E1591E /* NetworkOutput.swift in Sources */,
 				07E6D31F2A67016D0003EB10 /* NetworkWorkflow.swift in Sources */,
 				07B6EE4D2A5DA52E00DFEBF9 /* LocationController.swift in Sources */,
+				07A7CF582C9B8E92009777E0 /* ExternalIPOutput.swift in Sources */,
 				071693D42A3A5F7E002C4337 /* NetworkViewApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,6 +223,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -245,6 +250,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
@@ -282,6 +288,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -300,6 +307,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Release;
 		};
@@ -311,7 +319,8 @@
 				CODE_SIGN_ENTITLEMENTS = NetworkView/NetworkView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 101;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NetworkView/Preview Content\"";
 				DEVELOPMENT_TEAM = R335X53H7K;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -325,7 +334,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.6;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sneakypockets.NetworkView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -341,7 +350,8 @@
 				CODE_SIGN_ENTITLEMENTS = NetworkView/NetworkView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 101;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NetworkView/Preview Content\"";
 				DEVELOPMENT_TEAM = R335X53H7K;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -355,7 +365,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.3.6;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sneakypockets.NetworkView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

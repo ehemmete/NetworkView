@@ -30,46 +30,27 @@ struct ContentView: View, CustomUserLocationDelegate {
     @AppStorage("beTranslucent") var beTranslucent = false
     @EnvironmentObject var networkMonitor: NetworkMonitor
     @EnvironmentObject var networkOutput: NetworkOutput
+    @EnvironmentObject var externalIPOutput: ExternalIPOutput
     @State var presentMainAlert = false
     
     var body: some View {
-        //        let _ = Self._printChanges()
         ZStack(alignment: .top) {
             Text("NetworkView")
                 .padding(.top, 6)
                 .ignoresSafeArea()
                 .bold()
-            if networkMonitor.isConnected {
-                if useMonospaced {
-                    Text(networkOutput.displayOutput)
-                        .textSelection(.enabled)
-                        .font(.system(size: CGFloat(fontSize)).monospaced())
-                        .padding(.horizontal)
-                        .fixedSize()
-                } else {
-                    Text(networkOutput.displayOutput)
-                        .textSelection(.enabled)
-                        .font(.system(size: CGFloat(fontSize)))
-                        .padding(.horizontal)
-                        .fixedSize()
-                }
-            } else {
-                if useMonospaced {
-                    Text("No network connection")
-                        .frame(minWidth: 200)
-                        .textSelection(.enabled)
-                        .font(.system(size: CGFloat(fontSize)).monospaced())
-                        .padding(.horizontal)
-                        .fixedSize()
-                } else {
-                    Text("No network connection")
-                        .frame(minWidth: 200)
-                        .textSelection(.enabled)
-                        .font(.system(size: CGFloat(fontSize)))
-                        .padding(.horizontal)
-                        .fixedSize()
-                }
+            VStack(alignment: .leading) {
+                Text(networkMonitor.isConnected ? networkOutput.displayOutput : "No network connection")
+                    .textSelection(.enabled)
+                    .font(useMonospaced ? .system(size: CGFloat(fontSize)).monospaced() : .system(size: CGFloat(fontSize)))
+                    .fixedSize()
+                Text(networkMonitor.isConnected ? externalIPOutput.externalIPDisplay : "No external IP address")
+                    .textSelection(.enabled)
+                    .font(useMonospaced ? .system(size: CGFloat(fontSize)).monospaced() : .system(size: CGFloat(fontSize)))
+                    .fixedSize()
             }
+            .padding(.horizontal)
+            .padding(.bottom)
         }
         .alert("Please restart NetworkView to apply the change.", isPresented: $presentMainAlert) {
             Button("OK") {}
@@ -88,5 +69,15 @@ struct ContentView: View, CustomUserLocationDelegate {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(NetworkOutput(displayOutput:
+"""
+Thunderbolt Ethernet Slot 2: 172.21.21.104
+Wi-Fi: 172.21.21.140
+Sneakypockets / 157@5GHz-40MHz wide
+ipsec0: 17.234.159.169
+"""
+                                            ))
+            .environmentObject(ExternalIPOutput(externalIPDisplay: "No External IP"))
+            .environmentObject(NetworkMonitor())
     }
 }

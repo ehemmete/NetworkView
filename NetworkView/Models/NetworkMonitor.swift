@@ -8,7 +8,7 @@
 import Foundation
 import Network
 
-class NetworkMonitor: ObservableObject {
+final class NetworkMonitor: ObservableObject, Sendable {
     private let networkMonitor = NWPathMonitor()
     private let workerQueue = DispatchQueue(label: "Monitor")
     var isConnected = false
@@ -18,7 +18,18 @@ class NetworkMonitor: ObservableObject {
             self.isConnected = path.status == .satisfied
             RunLoop.main.perform {
                 print("Network Changed")
-                networkOutput.updateOutput(newOutput: NetworkWorkflow.updateNetworkInfo(path: path) ?? "")
+                do {
+                    try networkOutput.updateOutput(newOutput: NetworkWorkflow.updateNetworkInfo(path: path) ?? "")
+                } catch {
+                    print(error)
+                }
+                Task {
+                    do {
+                        try await externalIPOutput.udpateExternalIPOutput(newOutput: NetworkWorkflow.getExternalIP())
+                    } catch {
+                        print(error)
+                    }
+                }
             }
         }
         networkMonitor.start(queue: workerQueue)

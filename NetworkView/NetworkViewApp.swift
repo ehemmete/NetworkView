@@ -16,6 +16,7 @@ struct NetworkViewApp: App {
                 .onDisappear { terminateApp() }
                 .environmentObject(networkMonitor)
                 .environmentObject(networkOutput)
+                .environmentObject(externalIPOutput)
         }
         .defaultPosition(.bottomLeading)
         .windowResizability(.contentSize)

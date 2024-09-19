@@ -11,9 +11,9 @@ import CoreWLAN
 
 var networkOutput = NetworkOutput(displayOutput: "Loading")
 
-class NetworkOutput: ObservableObject {
+final class NetworkOutput: ObservableObject {
     @Published var displayOutput: String
-    
+   
     init(displayOutput: String) {
         self.displayOutput = displayOutput
     }
@@ -21,4 +21,5 @@ class NetworkOutput: ObservableObject {
     func updateOutput(newOutput: String) {
         self.displayOutput = newOutput
     }
+    
 }
