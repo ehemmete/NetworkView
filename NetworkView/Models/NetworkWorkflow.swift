@@ -143,7 +143,7 @@ enum NetworkWorkflow {
             let sessionConfig = URLSessionConfiguration.default
             sessionConfig.timeoutIntervalForResource = 2
             let (data, _) = try await URLSession(configuration: sessionConfig).data(from: url!)
-            return "External: \(String(decoding: data, as: UTF8.self))"
+            return "External: \(String(decoding: data, as: UTF8.self).replacingOccurrences(of: "\n", with: ""))"
         } catch {
             return "External: No Connection"
         }

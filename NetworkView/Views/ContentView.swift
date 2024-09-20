@@ -50,6 +50,7 @@ struct ContentView: View, CustomUserLocationDelegate {
                     .fixedSize()
             }
             .padding(.horizontal)
+            .padding(.bottom)
         }
         .alert("Please restart NetworkView to apply the change.", isPresented: $presentMainAlert) {
             Button("OK") {}
