@@ -13,8 +13,11 @@
 		071693DB2A3A5F7E002C4337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071693DA2A3A5F7E002C4337 /* Preview Assets.xcassets */; };
 		071693E52A3A5F99002C4337 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693E32A3A5F99002C4337 /* NetworkMonitor.swift */; };
 		071693E82A3A5FFF002C4337 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693E72A3A5FFF002C4337 /* SettingsView.swift */; };
+		073548582D7112A700BC5F67 /* ntppoolJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073548572D7112A700BC5F67 /* ntppoolJSON.swift */; };
 		075D67DA2A5F016F00E1591E /* NetworkOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D67D92A5F016F00E1591E /* NetworkOutput.swift */; };
 		07A7CF582C9B8E92009777E0 /* ExternalIPOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7CF572C9B8E88009777E0 /* ExternalIPOutput.swift */; };
+		07AD426E2D03AF97000A14AB /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD426D2D03AF97000A14AB /* ProcessRunner.swift */; };
+		07AD42782D03B3F4000A14AB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD42772D03B3F0000A14AB /* extensions.swift */; };
 		07B6EE4D2A5DA52E00DFEBF9 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */; };
 		07E6D31F2A67016D0003EB10 /* NetworkWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6D31E2A67016D0003EB10 /* NetworkWorkflow.swift */; };
 /* End PBXBuildFile section */
@@ -29,8 +32,11 @@
 		071693E32A3A5F99002C4337 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
 		071693E72A3A5FFF002C4337 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		072D24DE2A5CB435008B1508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		073548572D7112A700BC5F67 /* ntppoolJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ntppoolJSON.swift; sourceTree = "<group>"; };
 		075D67D92A5F016F00E1591E /* NetworkOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOutput.swift; sourceTree = "<group>"; };
 		07A7CF572C9B8E88009777E0 /* ExternalIPOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalIPOutput.swift; sourceTree = "<group>"; };
+		07AD426D2D03AF97000A14AB /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
+		07AD42772D03B3F0000A14AB /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		07E6D31E2A67016D0003EB10 /* NetworkWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorkflow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +73,8 @@
 			children = (
 				072D24DE2A5CB435008B1508 /* Info.plist */,
 				071693D32A3A5F7E002C4337 /* NetworkViewApp.swift */,
+				07CBCDA62D07A45D0081366C /* Classes */,
+				07CBCDA52D07A41C0081366C /* Controllers */,
 				071693E62A3A5F9D002C4337 /* Models */,
 				071693E92A3A602E002C4337 /* Views */,
 				071693D72A3A5F7E002C4337 /* Assets.xcassets */,
@@ -87,11 +95,9 @@
 		071693E62A3A5F9D002C4337 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				075D67D92A5F016F00E1591E /* NetworkOutput.swift */,
-				07A7CF572C9B8E88009777E0 /* ExternalIPOutput.swift */,
+				07AD42772D03B3F0000A14AB /* extensions.swift */,
 				07E6D31E2A67016D0003EB10 /* NetworkWorkflow.swift */,
-				07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */,
-				071693E32A3A5F99002C4337 /* NetworkMonitor.swift */,
+				07AD426D2D03AF97000A14AB /* ProcessRunner.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,6 +109,25 @@
 				071693E72A3A5FFF002C4337 /* SettingsView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		07CBCDA52D07A41C0081366C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */,
+				071693E32A3A5F99002C4337 /* NetworkMonitor.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		07CBCDA62D07A45D0081366C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				075D67D92A5F016F00E1591E /* NetworkOutput.swift */,
+				07A7CF572C9B8E88009777E0 /* ExternalIPOutput.swift */,
+				073548572D7112A700BC5F67 /* ntppoolJSON.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +162,7 @@
 				TargetAttributes = {
 					071693CF2A3A5F7E002C4337 = {
 						CreatedOnToolsVersion = 15.0;
+						LastSwiftMigration = 1610;
 					};
 				};
 			};
@@ -177,7 +203,10 @@
 			files = (
 				071693E82A3A5FFF002C4337 /* SettingsView.swift in Sources */,
 				071693D62A3A5F7E002C4337 /* ContentView.swift in Sources */,
+				073548582D7112A700BC5F67 /* ntppoolJSON.swift in Sources */,
 				071693E52A3A5F99002C4337 /* NetworkMonitor.swift in Sources */,
+				07AD42782D03B3F4000A14AB /* extensions.swift in Sources */,
+				07AD426E2D03AF97000A14AB /* ProcessRunner.swift in Sources */,
 				075D67DA2A5F016F00E1591E /* NetworkOutput.swift in Sources */,
 				07E6D31F2A67016D0003EB10 /* NetworkWorkflow.swift in Sources */,
 				07B6EE4D2A5DA52E00DFEBF9 /* LocationController.swift in Sources */,
@@ -250,6 +279,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
@@ -307,6 +337,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Release;
@@ -316,10 +347,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NetworkView/NetworkView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 103;
+				CURRENT_PROJECT_VERSION = 105;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NetworkView/Preview Content\"";
 				DEVELOPMENT_TEAM = R335X53H7K;
@@ -333,11 +365,12 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sneakypockets.NetworkView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -347,10 +380,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = NetworkView/NetworkView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 103;
+				CURRENT_PROJECT_VERSION = 105;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"NetworkView/Preview Content\"";
 				DEVELOPMENT_TEAM = R335X53H7K;
@@ -364,8 +398,8 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
-				MARKETING_VERSION = 1.4;
+				MACOSX_DEPLOYMENT_TARGET = 14.6;
+				MARKETING_VERSION = 1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sneakypockets.NetworkView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

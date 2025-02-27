@@ -25,7 +25,7 @@ final class NetworkMonitor: ObservableObject, Sendable {
                 }
                 Task {
                     do {
-                        try await externalIPOutput.udpateExternalIPOutput(newOutput: NetworkWorkflow.getExternalIP())
+                        try await externalIPOutput.updateExternalIPOutput(newOutput: NetworkWorkflow.getExternalIP())
                     } catch {
                         print(error)
                     }

@@ -22,7 +22,7 @@ struct VisualEffectView: NSViewRepresentable {
 }
 
 struct ContentView: View, CustomUserLocationDelegate {
-    func userLocationUpdated(location: CLLocation) {
+    nonisolated func userLocationUpdated(location: CLLocation) {
         //        print("Location Updated")
     }
     @AppStorage("fontSize") var fontSize = 12

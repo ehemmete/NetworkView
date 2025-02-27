@@ -6,19 +6,17 @@
 //
 
 import Foundation
-import Network
-import CoreWLAN
 
-var externalIPOutput = ExternalIPOutput(externalIPDisplay: "Loading")
+let externalIPOutput = ExternalIPOutput(externalIPDisplay: "Loading")
 
-final class ExternalIPOutput: ObservableObject {
-    @Published var externalIPDisplay: String
+final class ExternalIPOutput: ObservableObject, Sendable {
+    @Published var externalIPDisplay: String = "Loading"
     
     init(externalIPDisplay: String) {
         self.externalIPDisplay = externalIPDisplay
     }
     
-    func udpateExternalIPOutput(newOutput: String) {
+    func updateExternalIPOutput(newOutput: String) {
         self.externalIPDisplay = newOutput
     }
 }
