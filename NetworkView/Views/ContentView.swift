@@ -71,13 +71,14 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
             .environmentObject(NetworkOutput(displayOutput:
 """
-Thunderbolt Ethernet Slot 2: 172.21.21.104
-Wi-Fi: 172.21.21.140
-Sneakypockets / 157@5GHz-40MHz wide
-ipsec0: 17.234.159.169
+Sonnet Solo: 192.168.1.12
+    5000Base-T <full-duplex>
+Wi-Fi: 192.168.1.155
+    FunnySSID / 161@5GHz-40MHz wide
+ipsec0: 10.10.77.61
 """
                                             ))
-            .environmentObject(ExternalIPOutput(externalIPDisplay: "No External IP"))
+            .environmentObject(ExternalIPOutput(externalIPDisplay: "External: 50.128.2.132"))
             .environmentObject(NetworkMonitor())
     }
 }
