@@ -167,11 +167,12 @@ enum NetworkWorkflow {
     static func getWifiInfo() throws -> String? {
         let client = CWWiFiClient.shared()
         let ssid_name = client.interface()?.ssid() ?? "Unavailable"
+        let bssid = client.interface()?.bssid() ?? "Unavailable"
         if let channel_number = client.interface()?.wlanChannel()?.channelNumber,
            let channel_width = client.interface()?.wlanChannel()?.channelWidth,
            let channel_band = client.interface()?.wlanChannel()?.channelBand
         {
-            return String("\(ssid_name) / \(channel_number)@\(channel_band)-\(channel_width) wide")
+            return String("\(ssid_name) / \(channel_number)@\(channel_band)-\(channel_width) wide\nBSSID: \(bssid)")
         } else {
             return String("Unable to get Wi-Fi information")
         }
