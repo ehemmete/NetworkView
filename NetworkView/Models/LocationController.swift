@@ -13,7 +13,7 @@ import SwiftUI
 protocol CustomUserLocationDelegate {
     func userLocationUpdated(location: CLLocation)
 }
-final class LocationServices: NSObject, CLLocationManagerDelegate, ObservableObject, Sendable {
+class LocationServices: NSObject, CLLocationManagerDelegate {
     @State var presentMainAlert = false
     public static let shared = LocationServices()
     var userLocationDelegate: CustomUserLocationDelegate?

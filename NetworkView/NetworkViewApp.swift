@@ -2,21 +2,21 @@
 //  NetworkViewApp.swift
 //  NetworkView
 //
-//  Created by Eric Hemmeter on 6/14/23.
+//  Created by Eric Hemmeter on 9/30/25.
 //
 
 import SwiftUI
 
 @main
 struct NetworkViewApp: App {
-    @StateObject var networkMonitor = NetworkMonitor()
+    @State private var networkMonitor = NetworkMonitor()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(networkMonitor)
                 .onDisappear { terminateApp() }
-                .environmentObject(networkMonitor)
-                .environmentObject(networkOutput)
-                .environmentObject(externalIPOutput)
+            
         }
         .defaultPosition(.bottomLeading)
         .windowResizability(.contentSize)

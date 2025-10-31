@@ -5,29 +5,24 @@
 //  Created by Eric Hemmeter on 6/13/23.
 //
 
-import Foundation
+import SwiftUI
 import Network
 
-final class NetworkMonitor: ObservableObject, Sendable {
+@Observable class NetworkMonitor {
     private let networkMonitor = NWPathMonitor()
     private let workerQueue = DispatchQueue(label: "Monitor")
     var isConnected = false
-
+    
     init() {
         networkMonitor.pathUpdateHandler = { path in
             self.isConnected = path.status == .satisfied
             RunLoop.main.perform {
                 print("Network Changed")
-                do {
-                    try networkOutput.updateOutput(newOutput: NetworkWorkflow.updateNetworkInfo(path: path) ?? "")
-                } catch {
-                    print(error)
-                }
                 Task {
                     do {
-                        try await externalIPOutput.updateExternalIPOutput(newOutput: NetworkWorkflow.getExternalIP())
+                        try await updateNetworkOutput(path: path)
                     } catch {
-                        print(error)
+                        print("Error updating network output: \(error)")
                     }
                 }
             }

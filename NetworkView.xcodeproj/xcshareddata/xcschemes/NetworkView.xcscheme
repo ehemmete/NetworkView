@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1630"
+   LastUpgradeVersion = "2600"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "071693CF2A3A5F7E002C4337"
+               BlueprintIdentifier = "0744649B2E8BFD1C00E7A197"
                BuildableName = "NetworkView.app"
                BlueprintName = "NetworkView"
                ReferencedContainer = "container:NetworkView.xcodeproj">
@@ -44,7 +44,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "071693CF2A3A5F7E002C4337"
+            BlueprintIdentifier = "0744649B2E8BFD1C00E7A197"
             BuildableName = "NetworkView.app"
             BlueprintName = "NetworkView"
             ReferencedContainer = "container:NetworkView.xcodeproj">
@@ -61,7 +61,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "071693CF2A3A5F7E002C4337"
+            BlueprintIdentifier = "0744649B2E8BFD1C00E7A197"
             BuildableName = "NetworkView.app"
             BlueprintName = "NetworkView"
             ReferencedContainer = "container:NetworkView.xcodeproj">
@@ -83,7 +83,7 @@
                <EnvironmentBuildable>
                   <BuildableReference
                      BuildableIdentifier = "primary"
-                     BlueprintIdentifier = "071693CF2A3A5F7E002C4337"
+                     BlueprintIdentifier = "0744649B2E8BFD1C00E7A197"
                      BuildableName = "NetworkView.app"
                      BlueprintName = "NetworkView"
                      ReferencedContainer = "container:NetworkView.xcodeproj">

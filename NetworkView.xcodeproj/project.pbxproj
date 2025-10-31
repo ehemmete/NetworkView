@@ -3,301 +3,119 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		071693D42A3A5F7E002C4337 /* NetworkViewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693D32A3A5F7E002C4337 /* NetworkViewApp.swift */; };
-		071693D62A3A5F7E002C4337 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693D52A3A5F7E002C4337 /* ContentView.swift */; };
-		071693D82A3A5F7E002C4337 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071693D72A3A5F7E002C4337 /* Assets.xcassets */; };
-		071693DB2A3A5F7E002C4337 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 071693DA2A3A5F7E002C4337 /* Preview Assets.xcassets */; };
-		071693E52A3A5F99002C4337 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693E32A3A5F99002C4337 /* NetworkMonitor.swift */; };
-		071693E82A3A5FFF002C4337 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071693E72A3A5FFF002C4337 /* SettingsView.swift */; };
-		073548582D7112A700BC5F67 /* ntppoolJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073548572D7112A700BC5F67 /* ntppoolJSON.swift */; };
-		075D67DA2A5F016F00E1591E /* NetworkOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075D67D92A5F016F00E1591E /* NetworkOutput.swift */; };
-		07A7CF582C9B8E92009777E0 /* ExternalIPOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A7CF572C9B8E88009777E0 /* ExternalIPOutput.swift */; };
-		07AD426E2D03AF97000A14AB /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD426D2D03AF97000A14AB /* ProcessRunner.swift */; };
-		07AD42782D03B3F4000A14AB /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AD42772D03B3F0000A14AB /* extensions.swift */; };
-		07B6EE4D2A5DA52E00DFEBF9 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */; };
-		07E6D31F2A67016D0003EB10 /* NetworkWorkflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07E6D31E2A67016D0003EB10 /* NetworkWorkflow.swift */; };
-		07EA3BA02DA9BE7300F4158B /* networkinfo in Embed Helper Tools */ = {isa = PBXBuildFile; fileRef = 07EA3B962DA9BD5F00F4158B /* networkinfo */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		07EA3BA62DA9BEF000F4158B /* ArgumentParser in Frameworks */ = {isa = PBXBuildFile; productRef = 07EA3BA52DA9BEF000F4158B /* ArgumentParser */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		07EA3B9E2DA9BE6C00F4158B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 071693C82A3A5F7E002C4337 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 07EA3B952DA9BD5F00F4158B;
-			remoteInfo = networkinfo;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		079B0FEB2DA99C9700AA30BE /* Embed Helper Tools */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
-			files = (
-				07EA3BA02DA9BE7300F4158B /* networkinfo in Embed Helper Tools */,
-			);
-			name = "Embed Helper Tools";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07EA3B942DA9BD5F00F4158B /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		071693D02A3A5F7E002C4337 /* NetworkView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkView.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		071693D32A3A5F7E002C4337 /* NetworkViewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkViewApp.swift; sourceTree = "<group>"; };
-		071693D52A3A5F7E002C4337 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		071693D72A3A5F7E002C4337 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		071693DA2A3A5F7E002C4337 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		071693DC2A3A5F7E002C4337 /* NetworkView.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NetworkView.entitlements; sourceTree = "<group>"; };
-		071693E32A3A5F99002C4337 /* NetworkMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
-		071693E72A3A5FFF002C4337 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		072D24DE2A5CB435008B1508 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		073548572D7112A700BC5F67 /* ntppoolJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ntppoolJSON.swift; sourceTree = "<group>"; };
-		075D67D92A5F016F00E1591E /* NetworkOutput.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkOutput.swift; sourceTree = "<group>"; };
-		07A7CF572C9B8E88009777E0 /* ExternalIPOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalIPOutput.swift; sourceTree = "<group>"; };
-		07AD426D2D03AF97000A14AB /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
-		07AD42772D03B3F0000A14AB /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
-		07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
-		07E6D31E2A67016D0003EB10 /* NetworkWorkflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkWorkflow.swift; sourceTree = "<group>"; };
-		07EA3B962DA9BD5F00F4158B /* networkinfo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = networkinfo; sourceTree = BUILT_PRODUCTS_DIR; };
+		0744649C2E8BFD1C00E7A197 /* NetworkView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetworkView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		07EA3B972DA9BD5F00F4158B /* networkinfo */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = networkinfo; sourceTree = "<group>"; };
+		0744649E2E8BFD1C00E7A197 /* NetworkView */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = NetworkView;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		071693CD2A3A5F7E002C4337 /* Frameworks */ = {
+		074464992E8BFD1C00E7A197 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07EA3B932DA9BD5F00F4158B /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				07EA3BA62DA9BEF000F4158B /* ArgumentParser in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		071693C72A3A5F7E002C4337 = {
+		074464932E8BFD1C00E7A197 = {
 			isa = PBXGroup;
 			children = (
-				071693D22A3A5F7E002C4337 /* NetworkView */,
-				07EA3B972DA9BD5F00F4158B /* networkinfo */,
-				071693D12A3A5F7E002C4337 /* Products */,
+				0744649E2E8BFD1C00E7A197 /* NetworkView */,
+				0744649D2E8BFD1C00E7A197 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		071693D12A3A5F7E002C4337 /* Products */ = {
+		0744649D2E8BFD1C00E7A197 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				071693D02A3A5F7E002C4337 /* NetworkView.app */,
-				07EA3B962DA9BD5F00F4158B /* networkinfo */,
+				0744649C2E8BFD1C00E7A197 /* NetworkView.app */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		071693D22A3A5F7E002C4337 /* NetworkView */ = {
-			isa = PBXGroup;
-			children = (
-				072D24DE2A5CB435008B1508 /* Info.plist */,
-				071693D32A3A5F7E002C4337 /* NetworkViewApp.swift */,
-				07CBCDA62D07A45D0081366C /* Classes */,
-				07CBCDA52D07A41C0081366C /* Controllers */,
-				071693E62A3A5F9D002C4337 /* Models */,
-				071693E92A3A602E002C4337 /* Views */,
-				071693D72A3A5F7E002C4337 /* Assets.xcassets */,
-				071693DC2A3A5F7E002C4337 /* NetworkView.entitlements */,
-				071693D92A3A5F7E002C4337 /* Preview Content */,
-			);
-			path = NetworkView;
-			sourceTree = "<group>";
-		};
-		071693D92A3A5F7E002C4337 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				071693DA2A3A5F7E002C4337 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		071693E62A3A5F9D002C4337 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				07AD42772D03B3F0000A14AB /* extensions.swift */,
-				07E6D31E2A67016D0003EB10 /* NetworkWorkflow.swift */,
-				07AD426D2D03AF97000A14AB /* ProcessRunner.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		071693E92A3A602E002C4337 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				071693D52A3A5F7E002C4337 /* ContentView.swift */,
-				071693E72A3A5FFF002C4337 /* SettingsView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		07CBCDA52D07A41C0081366C /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				07B6EE4C2A5DA52E00DFEBF9 /* LocationController.swift */,
-				071693E32A3A5F99002C4337 /* NetworkMonitor.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		07CBCDA62D07A45D0081366C /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				075D67D92A5F016F00E1591E /* NetworkOutput.swift */,
-				07A7CF572C9B8E88009777E0 /* ExternalIPOutput.swift */,
-				073548572D7112A700BC5F67 /* ntppoolJSON.swift */,
-			);
-			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		071693CF2A3A5F7E002C4337 /* NetworkView */ = {
+		0744649B2E8BFD1C00E7A197 /* NetworkView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 071693DF2A3A5F7E002C4337 /* Build configuration list for PBXNativeTarget "NetworkView" */;
+			buildConfigurationList = 074464A72E8BFD1C00E7A197 /* Build configuration list for PBXNativeTarget "NetworkView" */;
 			buildPhases = (
-				071693CC2A3A5F7E002C4337 /* Sources */,
-				071693CD2A3A5F7E002C4337 /* Frameworks */,
-				071693CE2A3A5F7E002C4337 /* Resources */,
-				079B0FEB2DA99C9700AA30BE /* Embed Helper Tools */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				07EA3B9F2DA9BE6C00F4158B /* PBXTargetDependency */,
-			);
-			name = NetworkView;
-			productName = NetworkView;
-			productReference = 071693D02A3A5F7E002C4337 /* NetworkView.app */;
-			productType = "com.apple.product-type.application";
-		};
-		07EA3B952DA9BD5F00F4158B /* networkinfo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 07EA3B9A2DA9BD5F00F4158B /* Build configuration list for PBXNativeTarget "networkinfo" */;
-			buildPhases = (
-				07EA3B922DA9BD5F00F4158B /* Sources */,
-				07EA3B932DA9BD5F00F4158B /* Frameworks */,
-				07EA3B942DA9BD5F00F4158B /* CopyFiles */,
+				074464982E8BFD1C00E7A197 /* Sources */,
+				074464992E8BFD1C00E7A197 /* Frameworks */,
+				0744649A2E8BFD1C00E7A197 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				07EA3B972DA9BD5F00F4158B /* networkinfo */,
+				0744649E2E8BFD1C00E7A197 /* NetworkView */,
 			);
-			name = networkinfo;
+			name = NetworkView;
 			packageProductDependencies = (
-				07EA3BA52DA9BEF000F4158B /* ArgumentParser */,
 			);
-			productName = networkinfo;
-			productReference = 07EA3B962DA9BD5F00F4158B /* networkinfo */;
-			productType = "com.apple.product-type.tool";
+			productName = NetworkView;
+			productReference = 0744649C2E8BFD1C00E7A197 /* NetworkView.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		071693C82A3A5F7E002C4337 /* Project object */ = {
+		074464942E8BFD1C00E7A197 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1630;
-				LastUpgradeCheck = 1630;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
 				TargetAttributes = {
-					071693CF2A3A5F7E002C4337 = {
-						CreatedOnToolsVersion = 15.0;
-						LastSwiftMigration = 1610;
-					};
-					07EA3B952DA9BD5F00F4158B = {
-						CreatedOnToolsVersion = 16.3;
+					0744649B2E8BFD1C00E7A197 = {
+						CreatedOnToolsVersion = 26.0;
 					};
 				};
 			};
-			buildConfigurationList = 071693CB2A3A5F7E002C4337 /* Build configuration list for PBXProject "NetworkView" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 074464972E8BFD1C00E7A197 /* Build configuration list for PBXProject "NetworkView" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = 071693C72A3A5F7E002C4337;
-			packageReferences = (
-				07EA3BA42DA9BEF000F4158B /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
-			);
-			productRefGroup = 071693D12A3A5F7E002C4337 /* Products */;
+			mainGroup = 074464932E8BFD1C00E7A197;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 0744649D2E8BFD1C00E7A197 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				071693CF2A3A5F7E002C4337 /* NetworkView */,
-				07EA3B952DA9BD5F00F4158B /* networkinfo */,
+				0744649B2E8BFD1C00E7A197 /* NetworkView */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		071693CE2A3A5F7E002C4337 /* Resources */ = {
+		0744649A2E8BFD1C00E7A197 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				071693DB2A3A5F7E002C4337 /* Preview Assets.xcassets in Resources */,
-				071693D82A3A5F7E002C4337 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		071693CC2A3A5F7E002C4337 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				071693E82A3A5FFF002C4337 /* SettingsView.swift in Sources */,
-				071693D62A3A5F7E002C4337 /* ContentView.swift in Sources */,
-				073548582D7112A700BC5F67 /* ntppoolJSON.swift in Sources */,
-				071693E52A3A5F99002C4337 /* NetworkMonitor.swift in Sources */,
-				07AD42782D03B3F4000A14AB /* extensions.swift in Sources */,
-				07AD426E2D03AF97000A14AB /* ProcessRunner.swift in Sources */,
-				075D67DA2A5F016F00E1591E /* NetworkOutput.swift in Sources */,
-				07E6D31F2A67016D0003EB10 /* NetworkWorkflow.swift in Sources */,
-				07B6EE4D2A5DA52E00DFEBF9 /* LocationController.swift in Sources */,
-				07A7CF582C9B8E92009777E0 /* ExternalIPOutput.swift in Sources */,
-				071693D42A3A5F7E002C4337 /* NetworkViewApp.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		07EA3B922DA9BD5F00F4158B /* Sources */ = {
+		074464982E8BFD1C00E7A197 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -306,16 +124,8 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		07EA3B9F2DA9BE6C00F4158B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 07EA3B952DA9BD5F00F4158B /* networkinfo */;
-			targetProxy = 07EA3B9E2DA9BE6C00F4158B /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		071693DD2A3A5F7E002C4337 /* Debug */ = {
+		074464A52E8BFD1C00E7A197 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -349,7 +159,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = R335X53H7K;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -370,19 +179,17 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
-				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Debug;
 		};
-		071693DE2A3A5F7E002C4337 /* Release */ = {
+		074464A62E8BFD1C00E7A197 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -416,7 +223,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = R335X53H7K;
 				ENABLE_NS_ASSERTIONS = NO;
@@ -431,111 +237,100 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 26.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
-				SWIFT_STRICT_CONCURRENCY = complete;
 			};
 			name = Release;
 		};
-		071693E02A3A5F7E002C4337 /* Debug */ = {
+		074464A82E8BFD1C00E7A197 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = NetworkViewIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = NetworkView/NetworkView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 113;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"NetworkView/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 119;
+				DEVELOPMENT_TEAM = R335X53H7K;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = YES;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkView/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "NetworkView requires location access to report the SSID.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sneakypockets.NetworkView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		071693E12A3A5F7E002C4337 /* Release */ = {
+		074464A92E8BFD1C00E7A197 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = NetworkViewIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = NetworkView/NetworkView.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 113;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"NetworkView/Preview Content\"";
+				CURRENT_PROJECT_VERSION = 119;
+				DEVELOPMENT_TEAM = R335X53H7K;
+				ENABLE_APP_SANDBOX = YES;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_INCOMING_NETWORK_CONNECTIONS = NO;
+				ENABLE_OUTGOING_NETWORK_CONNECTIONS = YES;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_RESOURCE_ACCESS_AUDIO_INPUT = NO;
+				ENABLE_RESOURCE_ACCESS_BLUETOOTH = NO;
+				ENABLE_RESOURCE_ACCESS_CALENDARS = NO;
+				ENABLE_RESOURCE_ACCESS_CAMERA = NO;
+				ENABLE_RESOURCE_ACCESS_CONTACTS = NO;
+				ENABLE_RESOURCE_ACCESS_LOCATION = YES;
+				ENABLE_RESOURCE_ACCESS_PRINTING = NO;
+				ENABLE_RESOURCE_ACCESS_USB = NO;
+				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = NetworkView/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "NetworkView requires location access to report the SSID.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.sneakypockets.NetworkView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		07EA3B9B2DA9BD5F00F4158B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = networkinfo/networkinfo.entitlements;
-				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				DEVELOPMENT_TEAM = R335X53H7K;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				OTHER_CODE_SIGN_FLAGS = "\"-i $(PRODUCT_BUNDLE_IDENTIFIER)\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sneakypockets.NetworkView.networkinfo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		07EA3B9C2DA9BD5F00F4158B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = networkinfo/networkinfo.entitlements;
-				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
-				CODE_SIGN_STYLE = Automatic;
-				CREATE_INFOPLIST_SECTION_IN_BINARY = YES;
-				DEVELOPMENT_TEAM = R335X53H7K;
-				ENABLE_HARDENED_RUNTIME = YES;
-				MACOSX_DEPLOYMENT_TARGET = 14.6;
-				OTHER_CODE_SIGN_FLAGS = "\"-i $(PRODUCT_BUNDLE_IDENTIFIER)\"";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sneakypockets.NetworkView.networkinfo;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -543,53 +338,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		071693CB2A3A5F7E002C4337 /* Build configuration list for PBXProject "NetworkView" */ = {
+		074464972E8BFD1C00E7A197 /* Build configuration list for PBXProject "NetworkView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				071693DD2A3A5F7E002C4337 /* Debug */,
-				071693DE2A3A5F7E002C4337 /* Release */,
+				074464A52E8BFD1C00E7A197 /* Debug */,
+				074464A62E8BFD1C00E7A197 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		071693DF2A3A5F7E002C4337 /* Build configuration list for PBXNativeTarget "NetworkView" */ = {
+		074464A72E8BFD1C00E7A197 /* Build configuration list for PBXNativeTarget "NetworkView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				071693E02A3A5F7E002C4337 /* Debug */,
-				071693E12A3A5F7E002C4337 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		07EA3B9A2DA9BD5F00F4158B /* Build configuration list for PBXNativeTarget "networkinfo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				07EA3B9B2DA9BD5F00F4158B /* Debug */,
-				07EA3B9C2DA9BD5F00F4158B /* Release */,
+				074464A82E8BFD1C00E7A197 /* Debug */,
+				074464A92E8BFD1C00E7A197 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		07EA3BA42DA9BEF000F4158B /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.5.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		07EA3BA52DA9BEF000F4158B /* ArgumentParser */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 07EA3BA42DA9BEF000F4158B /* XCRemoteSwiftPackageReference "swift-argument-parser" */;
-			productName = ArgumentParser;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 071693C82A3A5F7E002C4337 /* Project object */;
+	rootObject = 074464942E8BFD1C00E7A197 /* Project object */;
 }
