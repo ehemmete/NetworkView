@@ -65,7 +65,12 @@ func updateNetworkOutput(path: NWPath) async throws {
             }
         }
     }
-    await NetworkOutput.shared.output.append(try getExternalIP())
+
+    let external = try await getExternalIP()
+    if !NetworkOutput.shared.output.contains(where: { $0.serviceName == "External" }) {
+        NetworkOutput.shared.output.append(external)
+    }
+    
 }
 
 func getMediaSpeed(_ service: CFString) throws -> String? {

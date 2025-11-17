@@ -36,6 +36,7 @@ struct ContentView: View, CustomUserLocationDelegate {
 
     @Environment(NetworkMonitor.self) var networkMonitor
     @State var presentMainAlert = false
+    @State var externalDisplayed = false
     
     var body: some View {
         ZStack(alignment: .top) {
