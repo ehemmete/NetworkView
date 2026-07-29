@@ -18,13 +18,12 @@ struct SettingsView: View {
     @AppStorage("displaySpeed") var displaySpeed = true
     @AppStorage("displayWifiDetails") var displayWifiDetails = true
     @AppStorage("displayBSSID") var displayBSSID = false
-
+    
     @FocusState var isFocused: Bool
     @State var frameWidth = 350.0
     @State var frameHeight = 260.0
     
     var body: some View {
-//        VStack(alignment: .listRowSeparatorLeading) {
         GroupBox {
             List {
                 HStack {
@@ -95,19 +94,27 @@ struct SettingsView: View {
                 }
                 .pickerStyle(.menu)
                 .onChange(of: externalIPCheck) {
-                    let _ = NetworkMonitor()
+                    Task {
+                        do {
+                            // Trigger an update using a dummy path since we just need to refresh the output
+                            try await updateNetworkOutput(path: NWPathMonitor().currentPath)
+                        } catch {
+                            print("Error updating network output: \(error)")
+                        }
+                    }
                 }
             }
         }
         .frame(width: frameWidth, height: frameHeight)
+        
         HStack {
             Text("""
                  If SSID is always \"Unavailable\",
                  enable location services
                  for NetworkView
                  """)
-                .font(.caption)
-                .fixedSize()
+            .font(.caption)
+            .fixedSize()
             Button {
                 NSWorkspace.shared.open(URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_LocationServices")!)
             } label: {

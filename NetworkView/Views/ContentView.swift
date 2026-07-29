@@ -22,11 +22,7 @@ struct VisualEffectView: NSViewRepresentable {
     }
 }
 
-struct ContentView: View, CustomUserLocationDelegate {
-    func userLocationUpdated(location: CLLocation) {
-                print("Location Updated")
-    }
-    
+struct ContentView: View {
     @AppStorage("fontSize") var fontSize = 12
     @AppStorage("useMonospaced") var useMonospaced = true
     @AppStorage("beTranslucent") var beTranslucent = false
@@ -47,8 +43,8 @@ struct ContentView: View, CustomUserLocationDelegate {
             VStack(alignment: .leading) {
                     ForEach(NetworkOutput.shared.output) { service in
                         Text("\(service.serviceName): \(service.serviceIP)")
-                        if service.speed != nil && service.speed != "" && displaySpeed {
-                            Text("  \(service.speed!)")
+                        if let speed = service.speed, !speed.isEmpty, displaySpeed {
+                            Text("  \(speed)")
                         }
                         if service.SSID != nil && displayWifiDetails {
                             let ssid = service.SSID ?? "Unknown"
@@ -76,14 +72,11 @@ struct ContentView: View, CustomUserLocationDelegate {
         .background(beTranslucent ? VisualEffectView().ignoresSafeArea() : nil)
         .onAppear(perform: {
             if LocationServices.shared.locationManager.authorizationStatus == .authorizedAlways {
-                LocationServices.shared.userLocationDelegate = self
+                // No longer need to set delegate = self
             } else {
                 LocationServices.shared.locationManager.requestAlwaysAuthorization()
             }
         })
     }
-}
-
-#Preview {
-    ContentView()
+        
 }

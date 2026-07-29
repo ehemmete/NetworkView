@@ -14,20 +14,26 @@ import Network
     var isConnected = false
     
     init() {
-        networkMonitor.pathUpdateHandler = { path in
-            self.isConnected = path.status == .satisfied
-            RunLoop.main.perform {
-                print("Network Changed")
-                Task {
-                    do {
-                        try await updateNetworkOutput(path: path)
-                    } catch {
-                        print("Error updating network output: \(error)")
-                    }
+        networkMonitor.pathUpdateHandler = { [weak self] path in
+            guard let self = self else { return }
+            
+            let status = path.status == .satisfied
+            
+            // Use a Task to handle the async update on the MainActor
+            Task { @MainActor in
+                self.isConnected = status
+                print("Network Changed: \(status ? "Connected" : "Disconnected")")
+                do {
+                    try await updateNetworkOutput(path: path)
+                } catch {
+                    print("Error updating network output: \(error)")
                 }
             }
         }
         networkMonitor.start(queue: workerQueue)
     }
+    
+    deinit {
+        networkMonitor.cancel()
+    }
 }
-

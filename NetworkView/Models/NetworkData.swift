@@ -11,11 +11,6 @@ import Network
 import SystemConfiguration
 
 struct NetworkData: Identifiable, Hashable {
-    static func == (lhs: NetworkData, rhs: NetworkData) -> Bool {
-        return lhs.serviceIP == rhs.serviceIP &&
-        lhs.serviceName == rhs.serviceName
-    }
-    
     var id = UUID()
     var serviceName: String = ""
     var serviceIP: String = ""
@@ -27,7 +22,7 @@ struct NetworkData: Identifiable, Hashable {
     var band: CWChannelBand?
     var width: CWChannelWidth?
     
-    init(serviceName: String, serviceIP: String,bsdName: String, speed: String? = nil, SSID: String? = nil, BSSID: String? = nil, channel: Int? = nil, band: CWChannelBand? = nil, width: CWChannelWidth? = nil) {
+    init(serviceName: String, serviceIP: String, bsdName: String, speed: String? = nil, SSID: String? = nil, BSSID: String? = nil, channel: Int? = nil, band: CWChannelBand? = nil, width: CWChannelWidth? = nil) {
         self.serviceName = serviceName
         self.serviceIP = serviceIP
         self.bsdName = bsdName
